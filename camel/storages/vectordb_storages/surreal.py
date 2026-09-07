@@ -324,8 +324,8 @@ class SurrealStorage(BaseVectorStorage):
             **kwargs (Any): Additional keyword arguments.
 
         Raises:
-            ValueError: If neither ids nor if_all=True is provided.
-            RuntimeError: If deleting records fails.
+            RuntimeError: If neither ids nor if_all=True is provided, or if
+                deleting records fails.
         """
         from surrealdb.data.types.record_id import RecordID
 

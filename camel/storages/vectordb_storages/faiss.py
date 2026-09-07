@@ -238,8 +238,8 @@ class FaissStorage(BaseVectorStorage):
     def _load_from_disk(self) -> None:
         r"""Loads the index and metadata from disk if they exist.
 
-        Raises:
-            ValueError: If the metadata is missing required keys.
+        If loading fails, including when metadata is missing required keys,
+        logs the error and attempts to create a new index.
         """
         if self.storage_path is None:
             return
